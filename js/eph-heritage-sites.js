@@ -661,17 +661,11 @@ function generateRecordDetails(qid) {
 
   // --- BARU MASUK KE KODE RINGKASAN YANG BARU ---
   let wikiUrlUtama = `https://www.wikidata.org/wiki/${qid}`;
-  let tautanSuntingRingkasan = `<a href="${wikiUrlUtama}" target="_blank" class="sunting-link" title="Sunting data di Wikidata" aria-label="Sunting data di Wikidata"></a>`;
+  let tautanSuntingRingkasan = `<a href="${wikiUrlUtama}" target="_blank" class="sunting-link" title="Sunting data di Wikidata" aria-label="Sunting data di Wikidata">[sunting]</a>`;
 
-  let designationsHtml = `
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <h2 style="margin: 0;">Ringkasan</h2>
-      ${tautanSuntingRingkasan}
-    </div>
-  `;
-  designationsHtml += '<ul class="designations">';
-
-  // ... (dan seterusnya ke bawah sesuai kode terakhir yang kita bahas) ...
+// 2. Letakkan tautan sunting di dalam tag <h2>
+let designationsHtml = `<h2>Ringkasan ${tautanSuntingRingkasan}</h2>`;
+designationsHtml += '<ul class="designations">';
 
 let isFirstDesignation = true; // Mencegah duplikasi container peristiwa
 
